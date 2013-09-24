@@ -1,11 +1,11 @@
 # The HotDog vendor
 
-### In you 'apps' directory, create a new Rails app with the following command:
+#### In you 'apps' directory, create a new Rails app with the following command:
 
 `rails new hotdog`
 
 
-### You can create a home page for your site with the following command
+#### You can create a home page for your site with the following command
 
 `rails g controller home index`
 
@@ -13,12 +13,12 @@
 This command just generates a *home_controller.rb* and *home/index.html.erb* file. Just like we created without a generator script in the beginning.
 As it does not create a model (no data model required) we do not need to do a rake db:migrate yet.
 
-### Go to *config/routes.rb* and find the line that was created by the generator and delete it:
+#### Go to *config/routes.rb* and find the line that was created by the generator and delete it:
 
 `get "home/index"`
 
 
-### Find the commented out root line and change it like so:
+#### Find the commented out root line and change it like so:
 
 ```
   # You can have the root of your site routed with "root"
@@ -30,42 +30,42 @@ As it does not create a model (no data model required) we do not need to do a ra
   root 'home#index'
 ```
 
-### Open a new tab from your command line (Command + T) and start your Rails server.
+#### Open a new tab from your command line (Command + T) and start your Rails server.
 
 `rails s`
 
 
-### Go to your browser and open localhost:3000 to check that you see the Home index page you just created. We will leave it like this for the moment.
+#### Go to your browser and open localhost:3000 to check that you see the Home index page you just created. We will leave it like this for the moment.
 
 >> screenshot_1
 
-### Now add the functionality that enables the hotdog vendor to add and list his locations. Go back to your command line:
+#### Now add the functionality that enables the hotdog vendor to add and list his locations. Go back to your command line:
 
 ```
 rails g scaffold Location name address suburb date:date start_time:time finish_time:time
 ```
 
-### Check the migration file that was just created to make sure everything looks right. *db/migrate/2013xxxxx_create_locations.rb*
+#### Check the migration file that was just created to make sure everything looks right. *db/migrate/2013xxxxx_create_locations.rb*
 
 >> screenshot_2
 
 
-### Run your migration
+#### Run your migration
 
 `rake db:migrate`
 
 
-### Go to your browser and check that you see the location index page localhost:3000/locations
+#### Go to your browser and check that you see the location index page localhost:3000/locations
 
 >> screenshot_3
 
 
-### Add a location with test data (make up a location)
+#### Add a location with test data (make up a location)
 
 >> screenshot_4
 
 
-### Let's show the locations on the home page. Go to *app/controllers/home_controller.rb* and find the index method. Bring in the location data by adding the following line:
+#### Let's show the locations on the home page. Go to *app/controllers/home_controller.rb* and find the index method. Bring in the location data by adding the following line:
 
 ```
   def index
@@ -74,7 +74,7 @@ rails g scaffold Location name address suburb date:date start_time:time finish_t
 ```
 
 
-### Now go to *app/views/home/index.html.erb*, delete the code that is already there and create a table that lists the added locations.
+#### Now go to *app/views/home/index.html.erb*, delete the code that is already there and create a table that lists the added locations.
 
 ```
 <h1>HotDog King</h1>
@@ -98,7 +98,7 @@ rails g scaffold Location name address suburb date:date start_time:time finish_t
 <% end %>
 ```
 
-### Check your home page and see that your table shows your locations.
+#### Check your home page and see that your table shows your locations.
 
 ## Bonus challenges
 
